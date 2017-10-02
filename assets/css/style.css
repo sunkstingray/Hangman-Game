@@ -1,0 +1,65 @@
+header {
+	display:block;
+	text-align: center;
+	font-size: 30px;
+	width:80%;
+	background-color: #bbb;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+.gameInstructions {
+	display:block;
+	text-align: center;
+	font-size: 20px;
+	width:80%;
+	background-color: #bbb;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+.gameWins {
+	display:block;
+	text-align: center;
+	font-size: 18px;
+	width:80%;
+	background-color: #bbb;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+.guessesRemaining {
+	display:block;
+	text-align: center;
+	font-size: 18px;
+	width:80%;
+	background-color: #bbb;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+.gameArea {
+	display:block;
+	text-align: center;
+	font-size: 50px;
+	width:80%;
+	background-color: #666;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+.gameWrong {
+	display:block;
+	text-align: center;
+	font-size: 18px;
+	width:80%;
+	background-color: #bbb;
+	clear:both;
+	margin: 10px auto;
+	padding: 10px;
+}

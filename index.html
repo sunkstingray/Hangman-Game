@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hangman</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Ewert|Sancreek|Smokum" rel="stylesheet">
 </head>
 <body>
-	<header><h1>Hangman</h1></header>
+	<header><p>Spaghetti Western</p><h1>Hangman</h1></header>
 
 	<div class="gameInstructions">
 		<h2>Press any letter key to begin guessing your word!</h2>
 	</div>
-	<div class="gameWins">Number of Wins:</div>
+	<div class="gameWins"><h3>Number of Wins:</h3><p id="wins"></p></div>
 	<div class="gameArea"><p id="displayWord"></p></div>
 	<div class="guessesRemaining"><h3>Guesses Remaining:</h3><p id="guessText">12</p></div>
 	<div class="gameWrong"><h3>Incorrect Letters Choosen:</h3><p id="wrongText"></p></div>

@@ -1,65 +1,113 @@
+body {
+	background: #efe4c2; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(top, #efe4c2, #72553f); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #efe4c2, #72553f); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #efe4c2, #72553f); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(right, #efe4c2, #72553f); /* Standard syntax */
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 header {
 	display:block;
 	text-align: center;
-	font-size: 30px;
+	color: #663500;
+	font-size: 40px;
+	font-family: 'Ewert', cursive;
 	width:80%;
-	background-color: #bbb;
-	clear:both;
-	margin: 10px auto;
+/*	background-color: #bbb;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
+}
+
+h1 {
+	font-size: 80px;
 }
 
 .gameInstructions {
 	display:block;
 	text-align: center;
-	font-size: 20px;
+	font-size: 36px;
+		color: #663500;
+	font-family: 'Smokum', cursive;
 	width:80%;
-	background-color: #bbb;
-	clear:both;
-	margin: 10px auto;
+/*	background-color: #bbb;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
 }
 
 .gameWins {
 	display:block;
 	text-align: center;
-	font-size: 18px;
+	font-size: 30px;
+	font-family: 'Smokum', cursive;
 	width:80%;
-	background-color: #bbb;
-	clear:both;
-	margin: 10px auto;
+	color: #663500;
+/*	background-color: #bbb;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
 }
 
 .guessesRemaining {
 	display:block;
 	text-align: center;
-	font-size: 18px;
+	font-size: 30px;
+	color: #663500;
+	font-family: 'Smokum', cursive;
 	width:80%;
-	background-color: #bbb;
-	clear:both;
-	margin: 10px auto;
+/*	background-color: #bbb;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
 }
 
 .gameArea {
 	display:block;
 	text-align: center;
-	font-size: 50px;
+	font-size: 80px;
+	color: #663500;
+	font-family: 'Sancreek', cursive;
 	width:80%;
-	background-color: #666;
-	clear:both;
-	margin: 10px auto;
+/*	background-color: #666;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
 }
 
 .gameWrong {
 	display:block;
 	text-align: center;
-	font-size: 18px;
+	font-size: 30px;
+	color: #663500;
+	font-family: 'Smokum', cursive;
 	width:80%;
-	background-color: #bbb;
-	clear:both;
-	margin: 10px auto;
+/*	background-color: #bbb;
+*/	clear:both;
+	margin: 10px 0px 10px 300px;
 	padding: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+	header {
+	margin: 10px 0px 10px 300px;
+	}
+/*	body {
+		background-size: 10%;
+		background-position: -100px -300px;
+	}*/
+
+
+@media screen and (max-width: 1200px) {
+	header {
+	margin: 10px 0px 10px 300px;
+	}
+/*	body {
+		background-size: 150%;
+		background-position: -200px 0px;
+	}*/
 }

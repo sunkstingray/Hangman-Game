@@ -1,54 +1,49 @@
 // set list of words
 var hangWords = ["rifle", "horse", "revolver", "outlaw"];
 
+// set current word
+
 var currentWord = hangWords[Math.floor(Math.random() * hangWords.length)];
 
-console.log(currentWord);
-
-var hangLetters = currentWord.split("");
+// var hangLetters = currentWord.split("");
 
 
 
-console.log(hangLetters);
-
+//set variable initial states
 var underScore = [];
 var rightWord = [];
 var wrongWord = [];
 var guessLeft = 12;
-var underScoreString = "";
-var underScoreFinal = "";
+var hangDisplayString = "";
+var hangDisplayFinal = "";
+var hangDisplayString = "";
 
-/// convert the words to underscores
+// convert the words to underscores
 
  var hangSwap = function(hangWords){
  	var hangSpaces = currentWord;
+ 	 underScore = [];
  	for (var i = currentWord.length - 1; i >= 0; i--) {
  		underScore.push('_');
  	}
- 	underScoreString = underScore.toString();
- 	underScoreFinal = underScoreString.split(',').join(" ");
-   return underScoreFinal;
+
+   return underScore;
  };
+// set initial blank underscores
 
+hangDisplayString = hangSwap().toString();
+hangDisplayFinal = hangDisplayString.split(',').join(" ");
+document.getElementById("displayWord").innerHTML = hangDisplayFinal;
 
-
-document.getElementById("displayWord").innerHTML = hangSwap();
-
- console.log (hangSwap());
- console.log (underScore);
-
-/// capture keystrokes and analize
+// capture keystrokes and analyze
 
 document.onkeyup = function(event) {
   var userGuess = event.key;
-  console.log(userGuess);
-  console.log(rightWord.indexOf(userGuess));
-  console.log(wrongWord.indexOf(userGuess));
 
   if(rightWord.indexOf(userGuess) === -1 && wrongWord.indexOf(userGuess) === -1){
-  if(currentWord.indexOf(userGuess) > -1) {
+  	if(currentWord.indexOf(userGuess) > -1) {
   	rightWord.push(userGuess);
-  	console.log(rightWord);
+  	document.getElementById("displayWord").innerHTML = letterPosition(userGuess);
   }
   else {
   	wrongWord.push(userGuess);
@@ -60,17 +55,36 @@ document.onkeyup = function(event) {
   	if(guessLeft === 0){
   		alert("You Lose!")
   	}
-  }
-	}}
-
-
-/// replace underscore with correct letter
-
-var hangDisplay = function(hangLetters){
-	document.getElementById("displayWord").innerHTML = underScore;
+  	}
+	}
 }
 
+var hangDisplay = hangSwap();
+/// replace underscore with correct letter
 
-///counter for wins
+  function letterPosition(userGuess) {
+    var resultMatches = [];
+    var ind = currentWord.indexOf(userGuess);
+    // if userGuess matches one or more letters in the current word
+    // push all instances of that letter to resultMatches
+    while (ind !== -1) {
+      resultMatches.push(ind);
+      ind = currentWord.indexOf(userGuess, ind + 1);
+    }
+
+    if (resultMatches.length > 0){
+    	var arrayLength = resultMatches.length;
+    	for (var i = 0; i < arrayLength; i++) {
+    	hangDisplay[resultMatches[i]] = userGuess;
+		}
+		hangDisplayString = hangDisplay.toString();
+		hangDisplayFinal = hangDisplayString.split(',').join(" ");
+    }
+
+    return hangDisplayFinal;
+}
+
+// counter for wins
 
 
+// reset on win or lose

@@ -10,6 +10,13 @@ body {
     background-attachment: fixed;
 }
 
+.noName {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+
 header {
 	display:block;
 	text-align: center;
@@ -27,12 +34,16 @@ h1 {
 	font-size: 80px;
 }
 
+h3 {
+	font-size: 30px;
+}
+
 .gameInstructions {
 	display:block;
 	text-align: center;
 	font-size: 36px;
-		color: #663500;
-	font-family: 'Smokum', cursive;
+	color: #663500;
+	font-family: 'IM Fell DW Pica', serif;
 	width:80%;
 /*	background-color: #bbb;
 */	clear:both;
@@ -44,7 +55,7 @@ h1 {
 	display:block;
 	text-align: center;
 	font-size: 30px;
-	font-family: 'Smokum', cursive;
+	font-family: 'IM Fell DW Pica', serif;
 	width:80%;
 	color: #663500;
 /*	background-color: #bbb;
@@ -58,7 +69,7 @@ h1 {
 	text-align: center;
 	font-size: 30px;
 	color: #663500;
-	font-family: 'Smokum', cursive;
+	font-family: 'IM Fell DW Pica', serif;
 	width:80%;
 /*	background-color: #bbb;
 */	clear:both;
@@ -84,7 +95,7 @@ h1 {
 	text-align: center;
 	font-size: 30px;
 	color: #663500;
-	font-family: 'Smokum', cursive;
+	font-family: 'IM Fell DW Pica', serif;
 	width:80%;
 /*	background-color: #bbb;
 */	clear:both;
@@ -92,22 +103,111 @@ h1 {
 	padding: 10px;
 }
 
-@media screen and (max-width: 1400px) {
-	header {
-	margin: 10px 0px 10px 300px;
-	}
-/*	body {
-		background-size: 10%;
-		background-position: -100px -300px;
-	}*/
-
-
 @media screen and (max-width: 1200px) {
-	header {
-	margin: 10px 0px 10px 300px;
+	.noName {
+		left: 0;
+		top: 0;
 	}
-/*	body {
-		background-size: 150%;
-		background-position: -200px 0px;
-	}*/
+
+	.noName img {
+		width: 70%;
+		height: auto;
+
+	}
+
+	header {
+		font-size: 40px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+
+	.gameInstructions {
+		font-size: 30px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+
+	.gameWins {
+		font-size: 30px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+
+	.guessesRemaining {
+		font-size: 30px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+
+	.gameWrong {
+		font-size: 30px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+
+	.gameArea {
+		font-size: 70px;
+		width:80%;
+		margin: 10px 0px 10px 300px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.noName {
+		left: 40px;
+		top: 40px;
+	}
+
+	.noName img {
+		width: 50%;
+		height: auto;
+
+	}
+
+	header {
+		font-size: 36px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
+
+	h1 {
+		font-size: 70px;
+	}
+	
+	h3 {
+		font-size: 24px;
+	}
+	.gameInstructions {
+		font-size: 24px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
+
+	.gameWins {
+		font-size: 24px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
+
+	.guessesRemaining {
+		font-size: 24px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
+
+	.gameWrong {
+		font-size: 24px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
+
+	.gameArea {
+		font-size: 55px;
+		width:80%;
+		margin: 10px 0px 10px 260px;
+	}
 }

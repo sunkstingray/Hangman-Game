@@ -1,13 +1,14 @@
 // set list of words
-var hangWords = ["rifle", "horse", "revolver", "outlaw", "gunslinger", "saddle", "poncho", "treasure", "reward", "spurs", "boots", "noose", "horseshoe"];
+var hangWords = ["rifle", "horse", "revolver", "outlaw", "gunslinger", "saddle", "poncho", "treasure", "reward", "spurs", "boots", "noose", "horseshoe", "saloon"];
 
 // set current word
 
 var currentWord = hangWords[Math.floor(Math.random() * hangWords.length)];
 
-// var hangLetters = currentWord.split("");
 
+// set characters that are acceptable choices
 
+var charChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 //set variable initial states
 var underScore = [];
@@ -21,6 +22,12 @@ var numWins = 0;
 var userGuess = "";
 var userSpace = "";
 var hangSpaces = "";
+
+// setting sounds
+
+var audioWin = new Audio('assets/audio/win-sound.mp3');
+
+var audioLose = new Audio('assets/audio/lose-sound.mp3');
 
 // convert the words to underscores
 
@@ -36,6 +43,7 @@ var hangSpaces = "";
 
 hangDisplayString = hangSwap().toString();
 hangDisplayFinal = hangDisplayString.split(',').join(" ");
+
 document.getElementById("displayWord").innerHTML = hangDisplayFinal;
 document.getElementById("wins").innerHTML = numWins;
 
@@ -43,8 +51,8 @@ document.getElementById("wins").innerHTML = numWins;
 function game(){
 	document.onkeyup = function(event) {
 	  userGuess = event.key;
-		if (userGuess.search(/[^a-zA-Z]+/) === -1) {
-			userGuess = userGuess.toLowerCase();
+	  userGuess = userGuess.toLowerCase();
+		if (charChoices.includes(userGuess) === true) {
 		  	if(rightWord.indexOf(userGuess) === -1 && wrongWord.indexOf(userGuess) === -1){
 			  	if(currentWord.indexOf(userGuess) > -1) {
 				  	rightWord.push(userGuess);
@@ -55,16 +63,6 @@ function game(){
 							document.getElementById("displayWord").innerHTML = hangDisplayFinal;
 							document.getElementById("repInst").innerHTML = "You Win! Press Spacebar To Play Again.";
 							onWin();
-							// document.onkeyup = function(event) {
-							// 	var userSpace = event.keyCode;
-							// 	if (userSpace == 32){
-							// 		currentWord = hangWords[Math.floor(Math.random() * hangWords.length)];
-							// 		hangDisplayString = hangSwap().toString();
-							// 		hangDisplayFinal = hangDisplayString.split(',').join(" ");
-							// 		document.getElementById("displayWord").innerHTML = hangDisplayFinal;
-							// 		guessLeft = 12;
-							// 	}
-							// }
 						}
 			  	}
 		  else {
@@ -87,6 +85,7 @@ function game(){
 game();
 
 var hangDisplay = hangSwap();
+
 /// replace underscore with correct letter
 
   function letterPosition(userGuess) {
@@ -118,13 +117,12 @@ var hangDisplay = hangSwap();
 
 
 
-
-// reset on win or lose
+// alert and reset on win or lose
 
 function onWin() {
 	document.getElementById("repInst").innerHTML = "YOU WIN!! Press enter to play again.";
-	document.getElementById("repInst").style.color = "#7f1311";
-	document.getElementById("repInst").style.fontSize = "60px";
+	document.getElementById("repInst").style.color = "#083300";
+	audioWin.play();
 	document.onkeyup = function(e) {
 		userSpace = e.keyCode;
 		if (userSpace == 13){
@@ -143,9 +141,8 @@ function onWin() {
 			hangDisplay = hangSwap();
 			document.getElementById("guessText").innerHTML = guessLeft;
 			document.getElementById("wrongText").innerHTML = wrongWord;
-			document.getElementById("repInst").innerHTML = "Press any letter key to begin guessing your word!";
+			document.getElementById("repInst").innerHTML = "Press any letter key to begin guessing the word!";
 			document.getElementById("repInst").style.color = "#663500";
-			document.getElementById("repInst").style.fontSize = "36px";
 			game();
 		}
 	}
@@ -155,7 +152,8 @@ function onWin() {
 function onLose() {
 	document.getElementById("repInst").innerHTML = "YOU LOSE!! Press enter to play again.";
 	document.getElementById("repInst").style.color = "#7f1311";
-	document.getElementById("repInst").style.fontSize = "60px";
+	audioLose.play();
+
 	document.onkeyup = function(e) {
 		userSpace = e.keyCode;
 		if (userSpace == 13){
@@ -174,9 +172,8 @@ function onLose() {
 			hangDisplay = hangSwap();
 			document.getElementById("guessText").innerHTML = guessLeft;
 			document.getElementById("wrongText").innerHTML = wrongWord;
-			document.getElementById("repInst").innerHTML = "Press any letter key to begin guessing your word!";
+			document.getElementById("repInst").innerHTML = "Press any letter key to begin guessing the word!";
 			document.getElementById("repInst").style.color = "#663500";
-			document.getElementById("repInst").style.fontSize = "36px";
 			game();
 		}
 	}

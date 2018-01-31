@@ -1,2 +1,2 @@
-# Hangman-Game
-Hangman game created using JavaScript
+# Spaghetti Wester Hangman Game
+Spaghetti Western themed hangman game created using JavaScript, CSS, and HTML.

@@ -1,7 +1,15 @@
 # Spaghetti Western Hangman Game
 
-![Website Image](https://sunkstingray.github.io/Hangman-Game/assets/images/hangman.gif)
+*This is a spaghetti western themed game of hangman.*
 
-Spaghetti Western themed hangman game created using JavaScript, CSS, and HTML.
+#### Technology Used:
+
+`HTML 5` `CSS 3` `JavaScript` `jQuery`
+
+## Instructions
+
+To play, start pressing keys for your letter guesses. Correct guesses will populate in the hangman slots, incorrect guesses will display in the "incorrect guess" area. Try to guess the word before you run out of guesses.
+
+![Website Image](https://sunkstingray.github.io/Hangman-Game/assets/images/hangman.gif)
 
 https://sunkstingray.github.io/Hangman-Game/

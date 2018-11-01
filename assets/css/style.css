@@ -1,16 +1,17 @@
-body {
+html {
 	background: linear-gradient(#efe4c2, #72553f); /* Standard syntax */
-	height: auto;
-	margin: 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+
+
 
 .noName {
 	position: absolute;
 	left: 0;
 	top: 10px;
-	z-index: -1;
+	height: 100vh;
+	overflow: hidden;
 }
 
 header {
@@ -20,10 +21,10 @@ header {
 	font-size: 40px;
 	font-family: 'Ewert', cursive;
 	width:650px;
-/*	background-color: #bbb;
-*/	clear:both;
+	clear:both;
 	margin: 30px 0px 10px 500px;
 	padding: 10px;
+	z-index: 100;
 }
 
 h1 {
@@ -39,6 +40,7 @@ h3 {
     padding: 0 5px 0 8px;
     border: 1px solid #72553f;
     box-shadow: 3px 3px 6px #72553f;
+    z-index: 100;
 }
 
 #guessText {
@@ -46,6 +48,7 @@ h3 {
     padding: 0 5px 0 8px;
     border: 1px solid #72553f;
     box-shadow: 3px 3px 6px #72553f;
+    z-index: 100;
 }
 
 .gameInstructions {
@@ -55,10 +58,10 @@ h3 {
 	color: #663500;
 	font-family: 'IM Fell DW Pica', serif;
 	width:650px;
-/*	background-color: #bbb;
-*/	clear:both;
+	clear:both;
 	margin: 10px 0px 10px 500px;
 	padding: 10px;
+	z-index: 100;
 }
 
 .gameWins {
@@ -68,10 +71,10 @@ h3 {
 	font-family: 'IM Fell DW Pica', serif;
 	width:650px;
 	color: #663500;
-/*	background-color: #bbb;
-*/	clear:both;
+	clear:both;
 	margin: 10px 0px 10px 500px;
 	padding: 10px;
+	z-index: 100;
 }
 
 .guessesRemaining {
@@ -84,6 +87,7 @@ h3 {
 	clear:both;
 	margin: 10px 0px 10px 500px;
 	padding: 10px;
+	z-index: 100;
 }
 
 .gameArea {
@@ -97,6 +101,7 @@ h3 {
 	margin: 10px 0px 10px 500px;
 	padding: 10px;
 	text-shadow: 2px 2px 8px #efe4c2;
+	z-index: 100;
 }
 
 .gameWrong {
@@ -109,10 +114,12 @@ h3 {
 	clear:both;
 	margin: 10px 0px 10px 500px;
 	padding: 10px;
+	z-index: 100;
 }
 
 #wrongText {
 	color: #8c2601;
+	z-index: 100;
 }
 
 
@@ -300,28 +307,34 @@ h3 {
 
 	}
 
-	header, .gameWins, .guessesRemaining, .gameWrong{
-		font-size: 20px;
-		width:400px;
+	header, .gameWins, .guessesRemaining, .gameWrong {
+		font-size: 16px;
+		width:100%;
 		margin: 10px 0px;
+		padding: 0;
 	}
 
 	h1 {
 		font-size: 40px;
 	}
+
+	h2 {
+		font-size: 16px;
+	}
 	
 	h3 {
-		font-size: 18px;
+		font-size: 16px;
 	}
 	.gameInstructions {
-		font-size: 18px;
-		width:400px;
+		width:100%;
 		margin: 10px 0px;
+		padding: 0;
 	}
 
 	.gameArea {
-		font-size: 45px;
-		width:400px;
+		font-size: 40px;
+		width:100%;
 		margin: 10px 0px;
+		padding: 0;
 	}
 }
